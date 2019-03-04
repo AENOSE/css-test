@@ -14,31 +14,27 @@
     body{
       height:10000px;
       background-color:red;
-    }
-    #boxOne{                         /*fixed포지션 이건 스크롤에 따라 움직임*/
-      height:300px;
-      width:300px;
-      background-color:yellow;
-      position:static;             /*static이거는 붙으면 거기 있음*/
-      border:2px dashed black;
-    }
-    #boxTwo{
-      height:300px;
-      width:300px;
-      background-color:green;
-      position:fixed;
-      bottom:10px;               /* 위로 10간격에서 고정됨 (위)top:10px, (밑)bottom:10px, right, left */
-      border:2px dashed black;
-    }
 
+    }
+    .abs-box{
+      width:400px;
+      height:400px;
+      background-color: yellow;
+      position: relative;
+    }
+    .abs-child{
+      width:100px;
+      height:100px;
+      background-color: green;
+      position: absolute; /*absolute은 부모값이 있어야함 위에 relative가 부모값 없으면 본문 body에 맞춤*/
+      right:10px;
+      top:10px;
+    }
   </style>
 </head>
 <body>
-  <div id="boxOne">            <!--fixed포지션-->
-    <div class="box-child"></div>
-  </div>
-  <div id="boxTwo">
-    <div class="box-child"></div>
+  <div class="abs-box">
+    <div class="abs-child"></div>
   </div>
 
 </body>
